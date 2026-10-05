@@ -23,4 +23,9 @@ public class ApplicationRequest : BaseEntity
     public ApplicationStatus Status { get; set; }
 
     public ICollection<Activity> Activities { get; set; } = [];
+
+    public ICollection<ApplicationDocument> ApplicationDocuments { get; set; }
+    = new List<ApplicationDocument>();
+    public ICollection<Annex> Annexes { get; set; }
+    = new List<Annex>();
 }
