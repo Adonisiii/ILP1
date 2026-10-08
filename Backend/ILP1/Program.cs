@@ -1,9 +1,19 @@
+using Application.Interfaces;
+using Application.Services;
+using Infrastructure;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 builder.Services.AddControllers();
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+
+// Regjistrimi i Repositories
+builder.Services.AddInfrastructure();
+
+// Regjistrimi i ActivityService
+builder.Services.AddScoped<IActivityService, ActivityService>();
+
+// OpenAPI
 builder.Services.AddOpenApi();
 
 var app = builder.Build();
